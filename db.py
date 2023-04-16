@@ -5,8 +5,13 @@ tablename = 'Tasks'
 
 class TasksDb:
     def __init__(self):
+        
+        import os.path
 
-        self.conn = sqlite3.connect(dbname)
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, dbname)
+
+        self.conn = sqlite3.connect(db_path)
         self.cursor = self.conn.cursor()
 
     def insert_task(self, link, src, desc):
@@ -37,6 +42,11 @@ class TasksDb:
         self.conn.close()
 
 if __name__ == "__main__":
+
+    import os.path
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(BASE_DIR, dbname)
 
     #Connecting to sqlite
     conn = sqlite3.connect(dbname)

@@ -31,7 +31,7 @@ function saveTask() {
         desc:desc
     }
 
-    $.post('http://localhost:5000/output', data, function (data, status) {
+    $.post('/output', data, function (data, status) {
         
         if(data == "false"){
             alert('Errore nel salvare la task. Controlla che il link sia valido')

@@ -28,7 +28,7 @@
 
 <body>
     <div>
-        <form action="http://localhost:5000/login" method="post">
+        <form action="{{url_for('login')}}" method="post">
             <div class="login-container">
                 <i class="fa-solid fa-user fa-2xl user-icon"></i>
                 <div>
@@ -44,7 +44,7 @@
         <h3>Login non riuscito</h3>
         {% else %}
         <h3>Login riuscito</h3>
-        <a href="http://localhost:5000">Vai</a>
+        <a href="/">Vai</a>
         {% endif %}
         {% endif %}
     </div>
