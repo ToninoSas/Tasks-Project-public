@@ -1,6 +1,6 @@
 # Tasks-Project-public
 This is a python web application, it use flask framework and SQLite db.
-With this app you can upload ph link or general link and see the thumbs video image. Cool.
+With this app you can upload PornHub link or general link and see the thumbs video image. Cool.
 
 ## Setup
 First, create virtual enviroment with: 'python3 -m venv VENV_NAME', (VENV_NAME is the name chosen by you)
