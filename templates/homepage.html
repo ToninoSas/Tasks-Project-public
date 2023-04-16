@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style-mobile.css">
+    <script src="../static/jquery.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <form action="http://localhost:5000/output" method="post">
+        <input type="text" name="link" />
+        <input type="submit" value="Output">
+    </form> -->
+
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <div id="navbar">
+            <button onclick="createTask()">Crea una nuova task</button>
+            <button onclick="document.location.href='/album'">Visualizza le task</button>
+            <button onclick="document.location.href='/logout'">Logout</button>
+        </div>
+
+        <div id="new-task">
+            <form>
+                <table>
+                    <tr>
+                        <th colspan="2">New Task</th>
+                    </tr>
+
+                    <tr>
+                        <td>URL: </td>
+                        <td><input type="text" name="url"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Descrizione:
+                        </td>
+                        <td>
+                            <textarea name="descr" cols="20" rows="10" maxlength="255" ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Salva"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="task-container">
+
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

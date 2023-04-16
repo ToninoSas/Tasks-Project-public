@@ -1,0 +1,29 @@
+@media screen and (max-width:600px) {
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        width: 90%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    #new-task table{
+        width: 100%;
+    }
+
+    #task-container > table{
+
+        width: 100%;
+        max-width: none;
+        min-width: none;
+
+
+    }
+}

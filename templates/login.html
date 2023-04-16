@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/86beb53b09.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <form action="http://localhost:5000/login" method="post">
+            <div class="login-container">
+                <i class="fa-solid fa-user fa-2xl user-icon"></i>
+                <div>
+                    <input type="password" name="password">
+                    <br> <br>
+                    <input type="submit" value="Login">
+                </div>
+            </div>
+        </form>
+        <br> <br>
+        {% if error != None %}
+        {% if error == True %}
+        <h3>Login non riuscito</h3>
+        {% else %}
+        <h3>Login riuscito</h3>
+        <a href="http://localhost:5000">Vai</a>
+        {% endif %}
+        {% endif %}
+    </div>
+
+
+
+</body>
+
+</html>
