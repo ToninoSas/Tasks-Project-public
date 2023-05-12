@@ -118,20 +118,15 @@ button{
     box-shadow: 3px 3px 5px 0.4px gray;
 }
 
-.thumb-img{
-    /* margin-left: auto;
-    margin-right: auto; */
 
-    /* background-color: black; */
-    /* visibility: hidden; */
+.hide-thumb{
     filter: blur(15px) opacity(40%);
-
-    /* filter:brightness(60px); */
 }
 
-.thumb-img:active{
+.hide-thumb:active{
     filter: none;
 }
+
 
 
 .back-to-home{

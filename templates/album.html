@@ -18,14 +18,17 @@
 <body>
     <div>
         <h1 id="top">Your Album</h1>
-        <a href="/"><i class="fa-solid fa-house home-icon" ></i></a>
+        <a href="/"><i class="fa-solid fa-house home-icon"></i></a>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <input type="checkbox" name="privacy_mode_btn" id="privacy_mode_btn" checked> Privacy Mode
     </div>
     <div id="task-container">
         {% for task in album %}
         <table>
             <tr>
                 <td>
-                    <img oncontextmenu="return false" class="thumb-img" src="{{task['src']}}" />
+                    <img oncontextmenu="return false" name="thumb-img" class="hide-thumb" src="{{task['src']}}" />
                 </td>
             </tr>
             <tr>
@@ -38,26 +41,26 @@
                 <td>Desc: {{task['desc']}}</td>
             </tr>
             <tr>
-                <td style="font-size: small;" >Date: {{task['date']}}</td>
+                <td style="font-size: small;">Date: {{task['date']}}</td>
             </tr>
 
         </table>
         {%endfor%}
-        
+
         <a href="#top" class="back-to-home"><i class="fa-solid fa-arrow-up"></i></a>
 
     </div>
 
     <script>
 
-        // $(".thumb-img").click(function(){
-        //     // $(this).css("filter", "none");
-        //     $(this).css('filter', 'none');
+        $('#privacy_mode_btn').change((e)=>{
+            if(e.target.checked)
+                $('img[name="thumb-img"]').addClass('hide-thumb');
+            else
+                $('img[name="thumb-img"]').removeClass('hide-thumb');
 
+        })
 
-        //     // alert("The img was clicked.");
-        // })
-        
     </script>
 </body>
 
