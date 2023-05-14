@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, abort, redirect, url_for, current_app, request
-from jinja2 import TemplateNotFound
 
 import requests
 
