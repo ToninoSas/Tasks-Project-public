@@ -1,16 +1,24 @@
 from bs4 import BeautifulSoup
 
-def scrapePhImg(response):
-    try:
-        soup = BeautifulSoup(response.text, 'html.parser')
+class Scraper():
+    def __init__(self, response):
+        self.soup = BeautifulSoup(response.text, 'html.parser')
 
-        image = soup.find('img', {'id':"videoElementPoster"})
+    def scrapeImg(self):
+        try:
+            image = self.soup.find('img', {'id':"videoElementPoster"})
 
-        return image['src']
-    except:
-        pass
+            return image['src']
+        except:
+            pass
 
-    # print(image.attrs)
+    def scrapeTitle(self):
+        try:
+            title = self.soup.select('h1.title > span')
+            return title[0].text
+
+        except:
+            pass
 
 
 

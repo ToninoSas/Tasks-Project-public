@@ -115,13 +115,17 @@ button{
 
     /* border: 1px solid black; */
     border-radius: 15px;
-    background-color:lightgray;
-    box-shadow: 3px 3px 5px 0.4px gray;
+    /* background-color:lightgray; */
+    /* box-shadow: 3px 3px 5px 0.4px gray; */
 }
 
 
 .hide-thumb{
     filter: blur(15px) opacity(40%);
+}
+
+.hide-title{
+    visibility: hidden;
 }
 
 .hide-thumb:active{

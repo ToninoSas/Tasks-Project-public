@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort, redirect, url_for, current_
 
 import requests
 
-from crawler import scrapePhImg
+from crawler import Scraper
 from db import TasksDb
 
 admin_page = Blueprint('admin_page', __name__, static_folder='static', template_folder='templates/admin')
@@ -65,7 +65,9 @@ def output():
             #errore poi gestito dal js        
             return "false"
 
-        imagesrc = scrapePhImg(response)
+        scraper = Scraper(response=response)
+        imagesrc = scraper.scrapeImg()
+        title = scraper.scrapeTitle()
             
         newtask = TasksDb()
         newtask.insert_task(link, imagesrc, desc)
@@ -101,8 +103,9 @@ def album():
         mydict['id'] = task[0]
         mydict['link'] = task[1]
         mydict['src'] = task[2]
-        mydict['desc'] = task[3]
-        mydict['date'] = task[4]
+        mydict['title'] = task[3]
+        mydict['desc'] = task[4]
+        mydict['date'] = task[5]
 
         result.append(mydict)
 

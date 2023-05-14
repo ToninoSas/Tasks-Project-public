@@ -21,7 +21,8 @@
         <a href="/"><i class="fa-solid fa-house home-icon"></i></a>
     </div>
     <div style="display: flex; align-items: center; justify-content: center;">
-        <input type="checkbox" name="privacy_mode_btn" id="privacy_mode_btn" checked> Privacy Mode
+        <input type="checkbox" name="privacy_mode_btn" id="privacy_mode_btn" checked> 
+        <label for="privacy_mode_btn">Privacy Mode</label>
     </div>
     <div id="task-container">
         {% for task in album %}
@@ -31,14 +32,14 @@
                     <img oncontextmenu="return false" name="thumb-img" class="hide-thumb" src="{{task['src']}}" />
                 </td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>Id: {{task['id']}}</td>
-            </tr>
+            </tr> -->
             <tr>
                 <td><a href="{{task['link']}}" target="_blank">Link</a></td>
             </tr>
             <tr>
-                <td>Desc: {{task['desc']}}</td>
+                <td class="hide-title" name="video-title">{{task['title']}}</td>
             </tr>
             <tr>
                 <td style="font-size: small;">Date: {{task['date']}}</td>
@@ -54,10 +55,15 @@
     <script>
 
         $('#privacy_mode_btn').change((e)=>{
-            if(e.target.checked)
+            if(e.target.checked){
                 $('img[name="thumb-img"]').addClass('hide-thumb');
-            else
+                $('td[name="video-title"]').addClass('hide-title');
+            }
+                
+            else{
+                $('td[name="video-title"]').removeClass('hide-title');
                 $('img[name="thumb-img"]').removeClass('hide-thumb');
+            }
 
         })
 
