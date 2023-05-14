@@ -22,6 +22,7 @@ h1{
 textarea{
     resize:none;
 }
+
 .container{
     margin-top: 0;
     margin-left: auto;
@@ -126,8 +127,6 @@ button{
 .hide-thumb:active{
     filter: none;
 }
-
-
 
 .back-to-home{
     text-decoration: none;

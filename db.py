@@ -41,37 +41,37 @@ class TasksDb:
     def close(self):
         self.conn.close()
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    import os.path
+import os.path
 
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    db_path = os.path.join(BASE_DIR, dbname)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, dbname)
 
-    #Connecting to sqlite
-    conn = sqlite3.connect(dbname)
+#Connecting to sqlite
+conn = sqlite3.connect(dbname)
 
-    #Creating a cursor object using the cursor() method
-    cursor = conn.cursor()
+#Creating a cursor object using the cursor() method
+cursor = conn.cursor()
 
-    #Creating table as per requirement
-    sql ='''
-        CREATE TABLE "Tasks" (
-            "id"	INTEGER,
-            "link"	TEXT,
-            "src"	TEXT NOT NULL,
-            "desc"	TEXT,
-            "date"	TEXT,
-            PRIMARY KEY("id")
-    );
-    '''
+#Creating table as per requirement
+sql ='''
+    CREATE TABLE IF NOT EXISTS "Tasks" (
+        "id"	INTEGER,
+        "link"	TEXT,
+        "src"	TEXT NOT NULL,
+        "desc"	TEXT,
+        "date"	TEXT,
+        PRIMARY KEY("id")
+);
+'''
 
-    cursor.execute(sql)
-    print("Table created successfully........")
+cursor.execute(sql)
+print("Table created successfully........")
 
-    # Commit your changes in the database
-    conn.commit()
+# Commit your changes in the database
+conn.commit()
 
-    #Closing the connection
-    conn.close()
+#Closing the connection
+conn.close()
 
