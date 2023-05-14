@@ -7,7 +7,7 @@ import db
 app = Flask(__name__, )
 app.secret_key = 'INSERT SECRET KEY'
 
-PROFILE_PSW = 'sas'
+PROFILE_PSW = 'INSERT PASSWORD'
 
 app.config['session'] = session
 app.config['PROFILE_PSW'] = PROFILE_PSW
